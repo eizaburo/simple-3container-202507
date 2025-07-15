@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<body>
+    <head>
+        <meta charset="utf-8">
+        <title>sample</title>
+    </head>
+    <button type="button" id="button">DBから値を取得</button>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            fetch('http://localhost:3001/inquiries')
+                .then(response => response.json())
+                .then(data => alert(JSON.stringify(data)))
+                .catch(error => alert('エラーが発生しました: ' + error));
+        }); 
+    </script>
+</body>
+
+</html>

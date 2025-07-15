@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_api
+    ports:
+      #公開ポートはreact等と被らないよう3001などとする。外部:内部
+      - 3001:3000
+    restart: unless-stopped
+    networks:
+      - appBackend
+    depends_on:
+      - db
+  db:
+    build: ../db
+    container_name: my_db
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    networks:
+      - appBackend
+
+networks:
+  appBackend:
+    driver: bridge

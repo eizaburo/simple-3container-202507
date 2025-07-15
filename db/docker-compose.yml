@@ -1,0 +1,16 @@
+services:
+  postgres:
+    build: .
+    container_name: postgres_testdb
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf -c hba_file=/etc/postgresql/pg_hba.conf
+
+volumes:
+  postgres_data:
