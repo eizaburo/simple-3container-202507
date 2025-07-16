@@ -16,9 +16,5 @@ COPY . .
 # アプリケーションのポートを公開
 EXPOSE 3000
 
-# ヘルスチェックを追加
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node healthcheck.js || exit 1
-
 # アプリケーションを起動
 CMD ["node", "index.js"]

@@ -1,5 +1,5 @@
 # PostgreSQL公式イメージを使用
-FROM postgres:15
+FROM postgres:17
 
 # 環境変数の設定
 ENV POSTGRES_DB=testdb

@@ -7,7 +7,7 @@ app.use(express.json());
 
 const { Pool } = require("pg");
 const pool = new Pool({
-    host: "my_db",
+    host: "my-db",
     database: "testdb",
     user: "dbuser",
     password: "postgres"

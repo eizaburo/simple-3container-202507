@@ -10,7 +10,7 @@
     <script>
         const button = document.getElementById("button");
         button.addEventListener("click", () => {
-            fetch('http://localhost:3001/inquiries')
+            fetch('http://localhost:30001/inquiries')
                 .then(response => response.json())
                 .then(data => alert(JSON.stringify(data)))
                 .catch(error => alert('エラーが発生しました: ' + error));
