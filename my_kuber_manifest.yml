@@ -102,7 +102,7 @@ spec:
       labels:
         app: db
     spec:
-      containers:
+      containers: # このPodの中にいれるコンテナを設定（ここでは１つ）
       - name: db
         image: my-db:latest
         imagePullPolicy: Never
